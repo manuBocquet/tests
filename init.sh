@@ -17,6 +17,7 @@ else
 	echo "Update repo $GITURL"
 	cd /opt/app
 	git fetch --all
+	git branch master
 	git reset --hard origin/master
 fi
 
