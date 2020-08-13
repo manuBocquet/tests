@@ -17,15 +17,15 @@ else
 	echo "Update repo $GITURL"
 	cd /opt/app
 	git fetch --all
-	git branch master
+	git checkout master
 	git reset --hard origin/master
 fi
 
 if [[ -e "/opt/app/src/main.py" ]]; then
 	echo "Launch service"
 	cd /opt/app/src
-	#exec uvicorn main:app --reload
-	exec python3 ./main.py
+	exec uvicorn main:app --reload
+	#exec python3 ./main.py
 else 
 	echo "Wait for exit"
 	trap cleanup SIGINT SIGTERM                                                
