@@ -23,7 +23,8 @@ fi
 if [[ -e "/opt/app/src/main.py" ]]; then
 	echo "Launch service"
 	cd /opt/app/src
-	uvicorn main:app --reload
+	#exec uvicorn main:app --reload
+	exec python3 ./main.py
 else 
 	echo "Wait for exit"
 	trap cleanup SIGINT SIGTERM                                                
