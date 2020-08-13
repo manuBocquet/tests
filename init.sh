@@ -10,7 +10,7 @@ cleanup ()
   exit 0                                                                     
 }     
 
-if [[ ! -f "/opt/app/main.py" ]]; then
+if [[ ! -f "/opt/app/src/main.py" ]]; then
 	echo "Clone $GITURL"
 	git clone $GITURL /opt/app
 else
@@ -20,9 +20,9 @@ else
 	git reset --hard origin master
 fi
 
-if [[ -e "/opt/app/main.py" ]]; then
+if [[ -e "/opt/app/src/main.py" ]]; then
 	echo "Launch service"
-	cd /opt/app/app
+	cd /opt/app/src
 	uvicorn main:app --reload
 else 
 	echo "Wait for exit"
@@ -35,4 +35,3 @@ else
   		echo "continue"                                                            
 	done	
 fi
-	
