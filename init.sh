@@ -24,7 +24,7 @@ fi
 if [[ -e "/opt/app/src/main.py" ]]; then
 	echo "Launch service"
 	cd /opt/app/src
-	exec uvicorn main:app --reload
+	exec uvicorn main:app --reload --port 80
 	#exec python3 ./main.py
 else 
 	echo "Wait for exit"
