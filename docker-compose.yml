@@ -6,8 +6,8 @@ services:
     container_name: demo
     ports:
       - 6080:80
-    #volumes:
-    # - demo_volume:/opt/app
+    volumes:
+      - demo_volume:/opt/app
 
 volumes:
   demo_volume:

@@ -16,8 +16,8 @@ if [[ ! -f "/opt/app/src/main.py" ]]; then
 else
 	echo "Update repo $GITURL"
 	cd /opt/app
-	git fetch --all origin master
-	git reset --hard origin master
+	git fetch --all
+	git reset --hard origin/master
 fi
 
 if [[ -e "/opt/app/src/main.py" ]]; then
