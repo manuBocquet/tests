@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-mytest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-mytest
+  template:
+    metadata:
+      labels:
+        app: app-mytest  # Pod label
+    spec:
+      containers:
+      - name: container-test
+        image: manubocquet/tests:latest
+        ports:
+        - containerPort: 80
